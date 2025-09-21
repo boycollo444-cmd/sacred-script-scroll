@@ -3,22 +3,57 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>sacred-script-scroll</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Holy Bible - King James Version | Complete Bible Online</title>
+    <meta name="description" content="Read the complete King James Version Bible online. Access all 66 books, search scripture, get daily verses, and enjoy offline reading with our Progressive Web App." />
+    <meta name="author" content="Holy Bible App" />
+    <meta name="keywords" content="Bible, King James Version, KJV, Scripture, Christian, God, Jesus, Holy Bible, Bible study, daily verse, Bible search" />
 
-    <meta property="og:title" content="sacred-script-scroll" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:title" content="Holy Bible - King James Version" />
+    <meta property="og:description" content="Complete KJV Bible with search, daily verses, and offline reading" />
+    <meta property="og:url" content="https://bible.lovableproject.com" />
+    <meta property="og:image" content="https://bible.lovableproject.com/icon-512.png" />
 
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:title" content="Holy Bible - King James Version" />
+    <meta name="twitter:description" content="Complete KJV Bible with search, daily verses, and offline reading" />
+    <meta name="twitter:image" content="https://bible.lovableproject.com/icon-512.png" />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#5c2e05" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Holy Bible" />
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon-192.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon-192.png" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bible.lovableproject.com" />
   </head>
 
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Register Service Worker -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

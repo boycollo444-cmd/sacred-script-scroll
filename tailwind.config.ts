@@ -57,6 +57,20 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Bible-specific semantic colors
+        verse: {
+          highlight: "hsl(var(--verse-highlight))",
+        },
+        chapter: {
+          accent: "hsl(var(--chapter-accent))",
+        },
+        daily: {
+          verse: "hsl(var(--daily-verse-bg))",
+        },
+      },
+      fontFamily: {
+        bible: ['Crimson Text', 'serif'],
+        ui: ['Inter', 'sans-serif'],
       },
       borderRadius: {
         lg: "var(--radius)",
