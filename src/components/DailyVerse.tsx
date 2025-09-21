@@ -55,11 +55,11 @@ export function DailyVerse() {
 
   if (loading) {
     return (
-      <Card className="bg-daily-verse animate-pulse">
-        <CardContent className="p-6">
+      <Card className="bg-card/50 border-border/30 animate-pulse">
+        <CardContent className="p-8">
           <div className="space-y-4">
             <div className="h-4 bg-muted rounded w-1/4"></div>
-            <div className="space-y-2">
+            <div className="space-y-3">
               <div className="h-4 bg-muted rounded"></div>
               <div className="h-4 bg-muted rounded w-3/4"></div>
             </div>
@@ -73,29 +73,29 @@ export function DailyVerse() {
   if (!verse) return null;
 
   return (
-    <Card className="bg-daily-verse border-primary/20 animate-fade-in">
-      <CardContent className="p-6">
-        <div className="flex items-start justify-between mb-4">
-          <div className="flex items-center space-x-2">
+    <Card className="bg-daily-verse border-border/30 animate-fade-in">
+      <CardContent className="p-8">
+        <div className="flex items-start justify-between mb-6">
+          <div className="flex items-center space-x-3">
             <Heart className="h-5 w-5 text-primary" />
-            <h3 className="text-lg font-semibold font-ui text-primary">Verse of the Day</h3>
+            <h3 className="text-lg font-medium font-ui text-foreground tracking-wide">Today's Verse</h3>
           </div>
           <Button
             variant="ghost"
             size="sm"
             onClick={handleShare}
-            className="hover:bg-primary/10"
+            className="hover:bg-accent/50 text-muted-foreground hover:text-foreground"
           >
             <Share2 className="h-4 w-4" />
           </Button>
         </div>
         
-        <blockquote className="verse-text text-xl mb-4 leading-relaxed text-foreground italic">
+        <blockquote className="verse-text text-xl md:text-2xl mb-6 leading-relaxed text-foreground font-light italic">
           "{verse.text}"
         </blockquote>
         
         <div className="text-right">
-          <cite className="text-primary font-ui font-medium">
+          <cite className="text-primary font-ui font-medium tracking-wide">
             {verse.book_name} {verse.chapter}:{verse.verse}
           </cite>
         </div>
